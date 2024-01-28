@@ -127,6 +127,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+ml_regression/
 
 # Spyder project settings
 .spyderproject
