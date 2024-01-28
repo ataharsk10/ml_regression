@@ -1,7 +1,9 @@
 base:
   project: ML_Regression
   random_state: 42
-  target_col: TARGET
+  target_col: average_score
+  numerical_columns: ["writing_score", "reading_score"]
+  categorical_columns: ["gender","race_ethnicity","parental_level_of_education","lunch","test_preparation_course"]
 
 data_source:
   DB_source: notebook/data/student.csv
@@ -13,3 +15,5 @@ split_data:
   train_path: artifacts/processed/train.csv
   test_path: artifacts/processed/test.csv
   test_size: 0.2
+
+preprocessor_obj: artifacts/preprocessor_object
