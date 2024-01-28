@@ -1,0 +1,7 @@
+# All required libraries are present here
+
+#Local
+-e .
+#Outside
+pandas
+numpy
