@@ -80,10 +80,10 @@ def initiate_transformation(config_path):
         test_arr = np.c_[feature_test_arr, np.array(target_test_df)]
         # Saving preprocessing object
         logging.info(f"Saved preprocessing object.")
-        preprocessor_obj_file_path = config['preprocessor_obj']
-        os.makedirs(os.path.dirname(preprocessor_obj_file_path),exist_ok=True)
+        preprocessor_obj_file_path = config['preprocessor_obj_path']
+        #os.makedirs(os.path.dirname(preprocessor_obj_file_path),exist_ok=True)
         save_object(file_path=preprocessor_obj_file_path,obj=preprocessing_obj)
-
+        # Returning train array, test array and preprocessor_obj_file_path path
         return (
                 train_arr,
                 test_arr,
@@ -97,8 +97,5 @@ if __name__=="__main__":
     args = argparse.ArgumentParser()
     args.add_argument("--config", default="params.yaml")
     parsed_args = args.parse_args()
-    # Calling load_and_save function
+    # Calling initiate_transformation
     initiate_transformation(config_path=parsed_args.config)
-    #load_and_save(config_path=parsed_args.config)
-    # Calling split and save function
-    #split_and_saved_data(config_path=parsed_args.config)

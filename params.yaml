@@ -16,4 +16,4 @@ split_data:
   test_path: artifacts/processed/test.csv
   test_size: 0.2
 
-preprocessor_obj: artifacts/preprocessor_object
+preprocessor_obj_path: artifacts/preprocessor_object/preprocessor.pkl
