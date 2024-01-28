@@ -1,3 +1,10 @@
+""""
+data_transformation.py will take train.csv and test.csv and
+apply data preprocessing/transformation over train,test file and
+save it as object: preprocessor.pkl and
+return train, test array
+"""
+
 import os
 import sys
 import argparse
