@@ -5,3 +5,5 @@
 #Outside
 pandas
 numpy
+scikit-learn
+PyYAML

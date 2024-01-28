@@ -1,0 +1,15 @@
+base:
+  project: ML_Regression
+  random_state: 42
+  target_col: TARGET
+
+data_source:
+  DB_source: notebook/data/student.csv
+
+load_data:
+  raw_dataset_csv: artifacts/raw/raw.csv
+
+split_data:
+  train_path: artifacts/processed/train.csv
+  test_path: artifacts/processed/test.csv
+  test_size: 0.2
