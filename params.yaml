@@ -28,3 +28,7 @@ estimators:
       max_depth: 2
 
 model_dir: model/model.pkl
+
+reports:
+  params: report/params.json
+  scores: report/scores.json
