@@ -1,0 +1,50 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/components/01_data_ingestion.py --config=params.yaml
+    deps:
+    - path: notebook/data/student.csv
+      hash: md5
+      md5: 81211a77e5d7da6bb104bc19e0c571f7
+      size: 72880
+    - path: src/components/read_params.py
+      hash: md5
+      md5: 5cb1fcf2617aeb0c1ea49ed010d56d5a
+      size: 537
+    outs:
+    - path: artifacts/processed/test.csv
+      hash: md5
+      md5: 07fc003c06e49cb3b47c0721e1b96ad0
+      size: 14548
+    - path: artifacts/processed/train.csv
+      hash: md5
+      md5: 9b9c2d42a8e3a4db6b179b5d6c2be956
+      size: 58345
+    - path: artifacts/raw/raw.csv
+      hash: md5
+      md5: ec25cf26f3343cf93bd72e71cb361840
+      size: 72753
+  data_transformation:
+    cmd: python src/components/02_data_transformation.py --config=params.yaml
+    deps:
+    - path: artifacts/processed/test.csv
+      hash: md5
+      md5: 07fc003c06e49cb3b47c0721e1b96ad0
+      size: 14548
+    - path: artifacts/processed/train.csv
+      hash: md5
+      md5: 9b9c2d42a8e3a4db6b179b5d6c2be956
+      size: 58345
+    - path: src/components/read_params.py
+      hash: md5
+      md5: 5cb1fcf2617aeb0c1ea49ed010d56d5a
+      size: 537
+    outs:
+    - path: artifacts/pre_processed/test.csv
+      hash: md5
+      md5: d08e64b446022d14552418308760d265
+      size: 156314
+    - path: artifacts/pre_processed/train.csv
+      hash: md5
+      md5: d08e64b446022d14552418308760d265
+      size: 156314

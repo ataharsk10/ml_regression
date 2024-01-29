@@ -1,0 +1,20 @@
+stages:
+  data_ingestion:
+    cmd: python src/components/01_data_ingestion.py --config=params.yaml
+    deps:
+    - src/components/read_params.py
+    - notebook/data/student.csv
+    outs:
+    - artifacts/raw/raw.csv
+    - artifacts/processed/train.csv
+    - artifacts/processed/test.csv
+
+  data_transformation:
+    cmd: python src/components/02_data_transformation.py --config=params.yaml
+    deps:
+    - src/components/read_params.py
+    - artifacts/processed/test.csv
+    - artifacts/processed/train.csv
+    outs:
+    - artifacts/pre_processed/train.csv
+    - artifacts/pre_processed/test.csv

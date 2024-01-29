@@ -9,3 +9,4 @@ scikit-learn
 PyYAML
 dill
 pickle4
+dvc
