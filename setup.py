@@ -19,9 +19,11 @@ def get_requirements(file_path:str)->List[str]:
 setup(
 name='ml_regression',
 version='0.0.1',
+description="Regression_example_package", 
 author='Atahar',
 author_email='ataharsk10@gmail.com',
 packages=find_packages(),
-install_requires=get_requirements('requirements.txt')
+#install_requires=get_requirements('requirements.txt'),
+license="MIT"
 
 )

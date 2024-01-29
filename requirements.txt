@@ -3,12 +3,12 @@
 #Local
 -e .
 #Outside
-pandas
-numpy
-scikit-learn
-PyYAML
-dill
-pickle4
+pandas == 1.5.2
+numpy == 1.23.1
+scikit-learn == 1.2.0
+PyYAML == 5.3.1
+dill == 0.3.8
+pickle4 == 0.0.1
 dvc
-pytest
-tox
+pytest == 6.0.0
+tox == 3.8.4
