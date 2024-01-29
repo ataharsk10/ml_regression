@@ -27,7 +27,17 @@ stages:
     cmd: python src/components/03_model_trainer.py --config=params.yaml
     deps:
     - src/components/read_params.py
+    - src/utils.py
     - artifacts/pre_processed/train.csv
     - artifacts/pre_processed/test.csv
+    params:
+    - estimators.RandomForest_regressor.params.n_estimators
+    - estimators.RandomForest_regressor.params.criterion
+    - estimators.RandomForest_regressor.params.max_depth
+    metrics:
+    - report/scores.json:
+        cache: false
+    - report/params.json:
+        cache: false
     outs:
     - model/model.pkl

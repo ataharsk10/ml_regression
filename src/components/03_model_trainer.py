@@ -15,7 +15,6 @@ from src.utils import save_object,save_object_json,reg_evaluate_models
 import pandas as pd
 
 from sklearn.ensemble import RandomForestRegressor
-
 ## Function for model training
 def model_training(config_path):
 
