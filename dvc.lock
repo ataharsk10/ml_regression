@@ -42,8 +42,8 @@ stages:
     params:
       params.yaml:
         estimators.RandomForest_regressor.params.criterion: squared_error
-        estimators.RandomForest_regressor.params.max_depth: 3
-        estimators.RandomForest_regressor.params.n_estimators: 100
+        estimators.RandomForest_regressor.params.max_depth: 5
+        estimators.RandomForest_regressor.params.n_estimators: 10
     outs:
     - path: artifacts/pre_processed/test.csv
       hash: md5
@@ -75,18 +75,18 @@ stages:
     params:
       params.yaml:
         estimators.RandomForest_regressor.params.criterion: squared_error
-        estimators.RandomForest_regressor.params.max_depth: 3
-        estimators.RandomForest_regressor.params.n_estimators: 100
+        estimators.RandomForest_regressor.params.max_depth: 5
+        estimators.RandomForest_regressor.params.n_estimators: 10
     outs:
     - path: model/model.pkl
       hash: md5
-      md5: c5b0a2d7d5f8176bc6ab6e907287e564
-      size: 133266
+      md5: 197f0f316cdf262433e6ac3931723554
+      size: 49164
     - path: report/params.json
       hash: md5
-      md5: 8a2df2c82ec0b0877a682ffb83fe47a3
-      size: 85
+      md5: 1846409d011f20bdc9b2526748b33448
+      size: 84
     - path: report/scores.json
       hash: md5
-      md5: dbdd15e93bddd2bcd2ff67ea5979c8ec
-      size: 164
+      md5: c90ee846a75407719f80bf25d55da474
+      size: 162

@@ -10,3 +10,5 @@ PyYAML
 dill
 pickle4
 dvc
+pytest
+tox
