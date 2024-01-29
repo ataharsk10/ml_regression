@@ -15,6 +15,19 @@ stages:
     - src/components/read_params.py
     - artifacts/processed/test.csv
     - artifacts/processed/train.csv
+    params:
+    - estimators.RandomForest_regressor.params.n_estimators
+    - estimators.RandomForest_regressor.params.criterion
+    - estimators.RandomForest_regressor.params.max_depth
     outs:
     - artifacts/pre_processed/train.csv
     - artifacts/pre_processed/test.csv
+
+  model_training:
+    cmd: python src/components/03_model_trainer.py --config=params.yaml
+    deps:
+    - src/components/read_params.py
+    - artifacts/pre_processed/train.csv
+    - artifacts/pre_processed/test.csv
+    outs:
+    - model/model.pkl

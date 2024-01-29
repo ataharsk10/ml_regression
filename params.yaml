@@ -20,4 +20,11 @@ preprocessed_split_data:
   train_path: artifacts/pre_processed/train.csv
   test_path: artifacts/pre_processed/test.csv
 
-preprocessor_obj_path: artifacts/preprocessor_object/preprocessor.pkl
+estimators:
+  RandomForest_regressor:
+    params:
+      n_estimators: 100
+      criterion: "squared_error"
+      max_depth: 2
+
+model_dir: model/model.pkl

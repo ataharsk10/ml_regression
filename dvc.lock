@@ -39,6 +39,11 @@ stages:
       hash: md5
       md5: 5cb1fcf2617aeb0c1ea49ed010d56d5a
       size: 537
+    params:
+      params.yaml:
+        estimators.RandomForest_regressor.params.criterion: squared_error
+        estimators.RandomForest_regressor.params.max_depth: 2
+        estimators.RandomForest_regressor.params.n_estimators: 100
     outs:
     - path: artifacts/pre_processed/test.csv
       hash: md5
@@ -48,3 +53,23 @@ stages:
       hash: md5
       md5: d08e64b446022d14552418308760d265
       size: 156314
+  model_training:
+    cmd: python src/components/03_model_trainer.py --config=params.yaml
+    deps:
+    - path: artifacts/pre_processed/test.csv
+      hash: md5
+      md5: d08e64b446022d14552418308760d265
+      size: 156314
+    - path: artifacts/pre_processed/train.csv
+      hash: md5
+      md5: d08e64b446022d14552418308760d265
+      size: 156314
+    - path: src/components/read_params.py
+      hash: md5
+      md5: 5cb1fcf2617aeb0c1ea49ed010d56d5a
+      size: 537
+    outs:
+    - path: model/model.pkl
+      hash: md5
+      md5: aa956326a649bbcd910e1f20d0273909
+      size: 75657
