@@ -52,9 +52,9 @@ def split_and_saved_data(config_path):
         # Reading params.yaml file
         config = read_params(config_path)
         # Getting test data path, train data path, raw data path, split ratio, random state
+        raw_data_path = config["load_data"]["raw_dataset_csv"]
         test_data_path = config["split_data"]["test_path"] 
         train_data_path = config["split_data"]["train_path"]
-        raw_data_path = config["load_data"]["raw_dataset_csv"]
         split_ratio = config["split_data"]["test_size"]
         random_state = config["base"]["random_state"]
         # Reading raw dataframe

@@ -70,8 +70,8 @@ stages:
       size: 537
     - path: src/utils.py
       hash: md5
-      md5: a55aecb64192d5f0334390a17f89305a
-      size: 1955
+      md5: 6d4ab592562683e79d89cce3221d3502
+      size: 2158
     params:
       params.yaml:
         estimators.RandomForest_regressor.params.criterion: squared_error
@@ -80,8 +80,8 @@ stages:
     outs:
     - path: model/model.pkl
       hash: md5
-      md5: 197f0f316cdf262433e6ac3931723554
-      size: 49164
+      md5: 5ae6fe266ae2faf8f9c588af004e04d7
+      size: 44077
     - path: report/params.json
       hash: md5
       md5: 1846409d011f20bdc9b2526748b33448

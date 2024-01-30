@@ -32,6 +32,7 @@ def initiate_data_transformer_object(config):
                 ("scaler",StandardScaler())
                 ]
                 )
+
         ## Categorical columns: Creating pipeline for Imputations, Encoding and Scaling
         cat_pipeline=Pipeline(
             steps=[
@@ -86,9 +87,9 @@ def initiate_transformation(config_path):
         train_arr = np.c_[feature_train_arr, np.array(target_train_df)]
         test_arr = np.c_[feature_test_arr, np.array(target_test_df)]
         ## Saving preprocessing object
-        #logging.info(f"Saved preprocessing object.")
-        #preprocessor_obj_file_path = config['preprocessor_obj_path']
-        #save_object(file_path=preprocessor_obj_file_path,obj=preprocessing_obj)
+        logging.info(f"Saved preprocessing object.")
+        preprocessor_obj_file_path = config['preprocessor_obj_path']
+        save_object(file_path=preprocessor_obj_file_path,obj=preprocessing_obj)
         
         ## Saving transform train, test dataset
         ## Train dataset

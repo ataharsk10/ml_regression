@@ -20,6 +20,8 @@ preprocessed_split_data:
   train_path: artifacts/pre_processed/train.csv
   test_path: artifacts/pre_processed/test.csv
 
+preprocessor_obj_path: artifacts/pre_processed_obj/pre_processed_obj.pkl
+
 estimators:
   RandomForest_regressor:
     params:
